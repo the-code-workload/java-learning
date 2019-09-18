@@ -26,13 +26,24 @@ public class TradeApplication {
         // So use parameterized constructor
         t.showTradeDetails();
 
+
         // 2nd Object
+        Fund fund1 = new Fund();
+        fund1.setFundName("ABC Fund with Number 1");
+        fund1.setFundNumber(567);
+
+        Trade t1 = new FxTrade(fund1, 12345, "Trader 1", 140.12, 1, "EURO");
+
+        t1.showTradeDetails();
+
+        // 3rd Object
         Fund _fund = new Fund();
         _fund.setFundName("ABC Fund with Underscore");
         _fund.setFundNumber(345);
 
         Trade _t = new FxTrade("EURO");
 
+        // Use parent's setters
         _t.setFund(_fund);
         _t.setTradeAmount(130.12);
         _t.setNoOfFunds(1);
@@ -40,18 +51,10 @@ public class TradeApplication {
         _t.setTraderName("Trader _");
         _t.showTradeDetails();
 
-        // 3rd Object
-        Fund fund1 = new Fund();
-        fund1.setFundName("ABC Fund with Number 1");
-        fund1.setFundNumber(567);
+        /// Lets create Trade List
 
-        Trade t1 = new FxTrade(12345, "Trader 1", 140.12, 1, "EURO");
+        List<Trade> tradeList = new ArrayList<>(); // Always keep interface in left side, in this case List. Why?
 
-        t1.setFund(fund1);
-
-        t1.showTradeDetails();
-
-        List<Trade> tradeList = new ArrayList<>();
         tradeList.add(t);
         tradeList.add(t1);
         tradeList.add(_t);

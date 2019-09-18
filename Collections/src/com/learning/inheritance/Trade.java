@@ -11,7 +11,8 @@ public abstract class Trade {
     public Trade() {
     }
 
-    public Trade(long tradeId, String traderName, double tradeAmount, int noOfFunds) {
+    public Trade(Fund fund, long tradeId, String traderName, double tradeAmount, int noOfFunds) {
+        this.fund = fund;
         this.tradeId = tradeId;
         this.traderName = traderName;
         this.tradeAmount = tradeAmount;

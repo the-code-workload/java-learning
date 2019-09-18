@@ -4,8 +4,8 @@ public class FxTrade extends Trade {
 
     String currency;
 
-    public FxTrade(long tradeId, String traderName, double tradeAmount, int noOfFunds, String currency) {
-        super(tradeId, traderName, tradeAmount, noOfFunds);
+    public FxTrade(Fund fund, long tradeId, String traderName, double tradeAmount, int noOfFunds, String currency) {
+        super(fund, tradeId, traderName, tradeAmount, noOfFunds);
         this.currency = currency;
     }
 
